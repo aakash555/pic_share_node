@@ -5,8 +5,9 @@
 # To setup the repository
 - `npm install`
 
-# To start the server on dev
+# To start the dev server
 - `npm run dev`  🚀
+
 
 Visit [localhost:4000](http://localhost:4000/)
 
@@ -14,6 +15,9 @@ Visit [localhost:4000](http://localhost:4000/)
 - `npm run test`
   Test cases are present only in login directory with login.test.ts.
   TODO: More test cases need to be written
+
+# Framework
+    TypeORM, Express, Mocha
 
 # Folder Structure
 ## src
@@ -26,7 +30,7 @@ Main Source code directory
   We have defined base Validations structure currently. This can be expanded for Auth related updates to request object and more validations.
 
   ### ORM
-  ORM configuration & Entities are defined here. We have kept the DB in sync for now. This can be changed to migration driven updates to DB structure.
+  ORM configuration & Entities are defined here. We have kept the DB in sync for now. This can be changed to migration driven updates
 
   ### Routes
   All the Main API routes with their controler and Middleware are defined in Routes
