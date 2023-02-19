@@ -19,8 +19,8 @@ Visit [localhost:4000](http://localhost:4000/)
 # Framework
     TypeORM, Express, Mocha
 
-# Important: Configuration
-    To Make the App work, please connect Postgre DB. CHeckout the config in .env
+# Configuration
+    To Make the App work, please connect PostgreSQL DB. Checkout the config in .env
 
 # Folder Structure
 ## src
