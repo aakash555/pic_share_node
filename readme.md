@@ -41,4 +41,4 @@ Main Source code directory
   ### types
   This folder is for defining global types and interfaces
 
-<!-- Todo In Progress. Needs more clear documentation -->
+## Todo In Progress. Needs more clear documentation
