@@ -12,7 +12,11 @@ export const setFavouroutePhoto = async (req: Request, res: Response, next: Next
   const userRepository = getRepository(User);
   try {
     const photo = await photoRepository.findOne({ where: { id: photo_id } });
-    const user = await userRepository.findOne({ where: { username: username } });
+    const user_list = await userRepository.find({
+      where: { username: username },
+      relations: ['favouroute_photos', 'favouroute_photos.creator'],
+    });
+    const user = user_list[0];
 
     if (!photo || !user) {
       const customError = new CustomError(400, 'General', 'Wrond Inputs does not exist', ['Photo/User do not exist']);
@@ -20,7 +24,9 @@ export const setFavouroutePhoto = async (req: Request, res: Response, next: Next
     }
 
     //Todo: Handle Cases where if favouroute entry is being set with same state
-    const is_photo_preset_as_favouroute = user.favouroute_photos?.find((photo) => photo.id !== photo_id);
+    const is_photo_preset_as_favouroute = user.favouroute_photos?.find((photo) => {
+      photo.id !== photo_id;
+    });
     if (is_set_favouroute_request) {
       if (!is_photo_preset_as_favouroute) {
         await getConnection().createQueryBuilder().relation(User, 'favouroute_photos').of(user).add(photo);
