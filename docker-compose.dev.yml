@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  db_postgres:
+    container_name: 'db_picshare'
+    image: 'postgres:14.2-alpine'
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./database/picshare:/var/lib/postgresql/data/
+
+  picshare_app:
+    entrypoint: 'npm run dev'
+    env_file:
+      - .env
+    ports:
+      - '4000:4000'
+    depends_on:
+      - db_postgres
+    links:
+      - db_postgres
