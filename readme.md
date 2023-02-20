@@ -8,6 +8,9 @@
 # To start the dev server
 - `npm run dev`  🚀
 
+# To start the server o Docker
+- `npm run docker:dev:build`  (This is for build and up) 🚀
+
 
 Visit [localhost:4000](http://localhost:4000/)
 
