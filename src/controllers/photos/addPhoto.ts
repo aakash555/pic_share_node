@@ -21,7 +21,6 @@ export const addPhoto = async (req: Request, res: Response, next: NextFunction) 
     newPhoto.url = url;
     newPhoto.title = title;
     newPhoto.creator = creator;
-    console.log(newPhoto);
     const savedData = await photoRepository.save(newPhoto);
     const data = {
       url: savedData.url,
