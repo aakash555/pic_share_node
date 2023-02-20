@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  picshare_app:
+    container_name: 'picshare_app'
+    build: .
+    restart: always
+    volumes:
+      - .:/app/
+      - /app/node_modules
+
+

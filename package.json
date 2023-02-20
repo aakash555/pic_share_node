@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Pic Share APp",
   "scripts": {
-    "dev": "debug=* NODE_PATH=./src ts-node-dev --respawn ./src/index.ts",
     "build": "rimraf dist && tsc",
     "start": "NODE_PATH=./dist node ./dist/index.js",
+    "dev": "debug=* NODE_PATH=./src ts-node-dev --respawn ./src/index.ts",
     "prepare": "husky install",
     "lint": "eslint --max-warnings 0 . && npm run tsc",
     "lint-fix": "eslint --fix .",
@@ -13,7 +13,9 @@
     "tsc": "tsc --noEmit",
     "format-lint": "prettier --config .prettierrc -l --ignore-unknown .",
     "format-fix": "prettier --config .prettierrc --write --ignore-unknown .",
-    "test": "NODE_PATH=./src mocha --require ts-node/register 'src/**/*.test.ts' --timeout 20000 --exit"
+    "test": "NODE_PATH=./src mocha --require ts-node/register 'src/**/*.test.ts' --timeout 20000 --exit",
+    "docker:dev:build": "docker-compose --file docker-compose.yml --file docker-compose.dev.yml up --build",
+    "docker:dev:up": "docker-compose --file docker-compose.yml --file docker-compose.dev.yml up"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

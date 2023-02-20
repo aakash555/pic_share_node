@@ -17,7 +17,7 @@ package-lock.json
 database/*
 !database/.gitkeep
 
-log/*
+log/*.log
 !log/.gitkeep
-*.log
+# *.log
 
