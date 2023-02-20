@@ -9,6 +9,7 @@
 - `npm run dev`  🚀
 
 # To start the server o Docker
+- Copy the ENV Variales from config/docker_dev.env
 - `npm run docker:dev:build`  (This is for build and up) 🚀
 
 
